@@ -34,10 +34,9 @@ class URLShortenerController extends Controller
 
     public function remote($token)
     {
-        dd(Link::where('short_token', $token)->first()->url);
         try {
             $url = Link::where('short_token', $token)->first()->url;
-            return redirect($url);
+            return redirect()->away($url);
         } catch (Exception $e) {
             return response()->view('error', [], 404);
         }
