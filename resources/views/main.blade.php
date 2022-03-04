@@ -8,7 +8,7 @@
         <button type="submit" class="flex-0 ring-red-600 ring-2 rounded-lg p-3 text-red-600 font-bold hover:bg-red-600 hover:text-white hover:shadow-lg transition duration-300 ease-out">Получить короткую ссылку</button>
     </form>
     @if (session('token'))
-    <form action="{{secure_url('/', ['token' => session('token')])}}">
+    <form method="post" action="{{secure_url('/', ['token' => session('token')])}}">
         @csrf
 
         <button type="submit" class="my-6 hover:underline">{{ltrim(url()->current(), 'https://') . '/' . session('token')}}</button>

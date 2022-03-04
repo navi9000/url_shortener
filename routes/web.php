@@ -5,4 +5,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [URLShortenerController::class, 'index'])->name('main');
 Route::post('/', [URLShortenerController::class, 'generate']);
-Route::get('/{token}', [URLShortenerController::class, 'remote'])->name('remote');
+Route::post('/{token}', [URLShortenerController::class, 'remote'])->name('remote');
