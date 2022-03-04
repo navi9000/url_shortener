@@ -11,7 +11,7 @@
     <form action="{{secure_asset('remote', ['token' => session('token')])}}">
         @csrf
 
-        <button type="submit" class="my-6 hover:underline">{{ltrim(url()->current(), 'http://') . '/' . session('token')}}</button>
+        <button type="submit" class="my-6 hover:underline">{{ltrim(url()->current(), 'https://') . '/' . session('token')}}</button>
     </form>
     @endif
 </div>
