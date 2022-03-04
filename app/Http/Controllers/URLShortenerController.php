@@ -36,7 +36,7 @@ class URLShortenerController extends Controller
     {
         try {
             $url = Link::where('short_token', $token)->first()->url;
-            return redirect()->away($url);
+            return redirect()->away('https://' . $url);
         } catch (Exception $e) {
             return response()->view('error', [], 404);
         }
